@@ -1,6 +1,15 @@
+using ControleDeMedicamentosWeb.WebApp.Compartilhado.Apresentacao;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddPresentationConfig();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapDefaultControllerRoute();
 
 app.Run();
