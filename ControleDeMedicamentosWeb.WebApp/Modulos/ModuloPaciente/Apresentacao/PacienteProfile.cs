@@ -8,5 +8,7 @@ public class PacienteProfile : Profile
     public PacienteProfile()
     {
         CreateMap<ListarPacientesDto, ListarPacientesViewModel>();
+
+        CreateMap<CadastrarPacienteViewModel, CadastrarPacienteDto>();
     }
 }
