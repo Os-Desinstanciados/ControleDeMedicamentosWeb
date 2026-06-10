@@ -16,12 +16,15 @@ public record CadastrarPacienteViewModel(
     string Nome,
 
     [Required(ErrorMessage = "O campo \"Telefone\" deve ser preenchido.")]
+    [StringLength(11, MinimumLength = 10, ErrorMessage = "O campo \"Telefone\" deve conter 10 ou 11 dígitos.")]
     string Telefone,
 
     [Required(ErrorMessage = "O campo \"Cartão SUS\" deve ser preenchido.")]
+    [StringLength(15, MinimumLength = 15, ErrorMessage = "O campo \"Cartão SUS\" deve conter 15 dígitos.")]
     string CartaoSUS,
 
     [Required(ErrorMessage = "O campo \"CPF\" deve ser preenchido.")]
+    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 15 dígitos.")]
     string Cpf
 );
 
@@ -33,12 +36,15 @@ public record EditarPacienteViewModel(
     string Nome,
 
     [Required(ErrorMessage = "O campo \"Telefone\" deve ser preenchido.")]
+    [StringLength(11, MinimumLength = 10, ErrorMessage = "O campo \"Telefone\" deve conter 10 ou 11 dígitos.")]
     string Telefone,
 
     [Required(ErrorMessage = "O campo \"Cartão SUS\" deve ser preenchido.")]
+    [StringLength(15, MinimumLength = 15, ErrorMessage = "O campo \"Cartão SUS\" deve conter 15 dígitos.")]
     string CartaoSUS,
 
     [Required(ErrorMessage = "O campo \"CPF\" deve ser preenchido.")]
+    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 15 dígitos.")]
     string Cpf
 );
 
