@@ -73,11 +73,11 @@ public class ServicoPaciente
         return Result.Ok();
     }
 
-    public List<ListarPacientesDto> SelecionarTodos()
+    public List<ListarPacienteDto> SelecionarTodos()
     {
         return repositorioPaciente
             .SelecionarTodos()
-            .Select(p => new ListarPacientesDto(
+            .Select(p => new ListarPacienteDto(
                 p.Id,
                 p.Nome,
                 p.Telefone,

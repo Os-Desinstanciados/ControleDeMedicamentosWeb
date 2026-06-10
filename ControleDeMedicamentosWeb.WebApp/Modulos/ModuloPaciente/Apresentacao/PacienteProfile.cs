@@ -7,10 +7,8 @@ public class PacienteProfile : Profile
 {
     public PacienteProfile()
     {
-        CreateMap<ListarPacientesDto, ListarPacientesViewModel>();
-
+        CreateMap<ListarPacienteDto, ListarPacientesViewModel>();
         CreateMap<CadastrarPacienteViewModel, CadastrarPacienteDto>();
-
         CreateMap<EditarPacienteViewModel, EditarPacienteDto>();
         CreateMap<DetalhesPacienteDto, EditarPacienteViewModel>();
         CreateMap<DetalhesPacienteDto, ExcluirPacienteViewModel>();

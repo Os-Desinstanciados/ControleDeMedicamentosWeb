@@ -1,0 +1,12 @@
+using AutoMapper;
+using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFuncionario.Aplicacao;
+
+namespace ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFuncionario.Apresentacao;
+
+public class FuncionarioProfile : Profile
+{
+    public FuncionarioProfile()
+    {
+        CreateMap<ListarFuncionarioDto, ListarFuncionarioViewModel>();
+    }
+}

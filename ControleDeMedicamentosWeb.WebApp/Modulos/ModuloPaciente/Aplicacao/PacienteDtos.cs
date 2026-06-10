@@ -1,6 +1,6 @@
 namespace ControleDeMedicamentosWeb.WebApp.Modulos.ModuloPaciente.Aplicacao;
 
-public record ListarPacientesDto(
+public record ListarPacienteDto(
     Guid Id,
     string Nome,
     string Telefone,

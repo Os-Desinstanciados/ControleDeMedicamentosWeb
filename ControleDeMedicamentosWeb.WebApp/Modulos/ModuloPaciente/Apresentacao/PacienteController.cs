@@ -11,7 +11,7 @@ public class PacienteController(ServicoPaciente servicoPaciente, IMapper mapeado
     [HttpGet]
     public ActionResult Listar()
     {
-        List<ListarPacientesDto> dtos = servicoPaciente.SelecionarTodos();
+        List<ListarPacienteDto> dtos = servicoPaciente.SelecionarTodos();
 
         List<ListarPacientesViewModel> listarVms = mapeador.Map<List<ListarPacientesViewModel>>(dtos);
 
