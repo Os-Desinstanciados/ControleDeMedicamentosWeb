@@ -11,5 +11,6 @@ public class FuncionarioProfile : Profile
         CreateMap<CadastrarFuncionarioViewModel, CadastrarFuncionarioDto>();
         CreateMap<EditarFuncionarioViewModel, EditarFuncionarioDto>();
         CreateMap<DetalhesFuncionarioDto, EditarFuncionarioViewModel>();
+        CreateMap<DetalhesFuncionarioDto, ExcluirFuncionarioViewModel>();
     }
 }

@@ -38,3 +38,10 @@ public record EditarFuncionarioViewModel(
     [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 15 dígitos.")]
     string Cpf
 );
+
+public record ExcluirFuncionarioViewModel(
+    Guid Id,
+    string Nome,
+    string Telefone,
+    string Cpf
+);
