@@ -1,6 +1,12 @@
 using ControleDeMedicamentosWeb.WebApp.Compartilhado.Apresentacao;
+using ControleDeMedicamentosWeb.WebApp.Compartilhado.Aplicacao;
+using ControleDeMedicamentosWeb.WebApp.Compartilhado.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddInfraRepositories();
+
+builder.Services.AddApplicationServices();
 
 builder.Services.AddPresentationConfig();
 

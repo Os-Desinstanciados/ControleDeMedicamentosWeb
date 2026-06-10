@@ -1,0 +1,40 @@
+@using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloPaciente.Apresentacao
+@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Listagem de Pacientes";
+}
+
+@model List<ListarPacientesViewModel>;
+
+<a class="btn-cadastrar" href="/Paciente/Cadastrar">
+    Cadastrar Novo
+</a>
+
+<table class="registros">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Cartão SUS</th>
+            <th>CPF</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@paciente.Nome</td>
+                <td>@paciente.Telefone</td>
+                <td>@paciente.CartaoSUS</td>
+                <td>@paciente.Cpf</td>
+
+                <td>
+                    <a href="/Paciente/Editar/@paciente.Id">Editar</a> |
+                    <a href="/Paciente/Excluir/@paciente.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
