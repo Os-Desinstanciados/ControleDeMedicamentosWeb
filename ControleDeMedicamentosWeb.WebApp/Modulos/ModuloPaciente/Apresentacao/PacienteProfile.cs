@@ -13,6 +13,6 @@ public class PacienteProfile : Profile
 
         CreateMap<EditarPacienteViewModel, EditarPacienteDto>();
         CreateMap<DetalhesPacienteDto, EditarPacienteViewModel>();
-        
+        CreateMap<DetalhesPacienteDto, ExcluirPacienteViewModel>();
     }
 }

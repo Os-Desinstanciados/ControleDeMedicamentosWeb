@@ -5,37 +5,57 @@
     ViewBag.Titulo = "Listagem de Pacientes";
 }
 
-@model List<ListarPacientesViewModel>;
+@model List<ListarPacientesViewModel>
 
-<a class="btn-cadastrar" href="/Paciente/Cadastrar">
-    Cadastrar Novo
-</a>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="mb-0">Pacientes Cadastrados</h3>
 
-<table class="registros">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Cartão SUS</th>
-            <th>CPF</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
+    <a asp-action="Cadastrar" class="btn btn-primary">
+        Cadastrar Novo
+    </a>
+</div>
 
-    <tbody>
-        @foreach (var paciente in Model)
-        {
-            <tr>
-                <td>@paciente.Nome</td>
-                <td>@paciente.Telefone</td>
-                <td>@paciente.CartaoSUS</td>
-                <td>@paciente.Cpf</td>
+<div class="card shadow-sm">
+    <div class="card-body">
 
-                <td>
-                    <a href="/Paciente/Editar/@paciente.Id">Editar</a> |
-                    <a href="/Paciente/Excluir/@paciente.Id">Excluir</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <table class="table table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Cartão SUS</th>
+                    <th>CPF</th>
+                    <th width="180">Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var paciente in Model)
+                {
+                    <tr>
+                        <td>@paciente.Nome</td>
+                        <td>@paciente.Telefone</td>
+                        <td>@paciente.CartaoSUS</td>
+                        <td>@paciente.Cpf</td>
+
+                        <td>
+                            <a asp-action="Editar"
+                               asp-route-id="@paciente.Id"
+                               class="btn btn-sm btn-warning">
+                                Editar
+                            </a>
+
+                            <a asp-action="Excluir"
+                               asp-route-id="@paciente.Id"
+                               class="btn btn-sm btn-danger">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

@@ -41,3 +41,11 @@ public record EditarPacienteViewModel(
     [Required(ErrorMessage = "O campo \"CPF\" deve ser preenchido.")]
     string Cpf
 );
+
+public record ExcluirPacienteViewModel(
+    Guid Id,
+    string Nome,
+    string Telefone,
+    string CartaoSUS,
+    string Cpf
+);
