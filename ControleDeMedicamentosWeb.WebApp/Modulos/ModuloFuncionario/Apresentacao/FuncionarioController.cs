@@ -18,4 +18,36 @@ public class FuncionarioController(ServicoFuncionario servicoFuncionario, IMappe
 
         return View(listarVms);
     }
+
+    [HttpGet]
+    public ActionResult Cadastrar()
+    {
+        CadastrarFuncionarioViewModel cadastrarVm = new CadastrarFuncionarioViewModel(
+            string.Empty,
+            string.Empty,
+            string.Empty
+        );
+
+        return View(cadastrarVm);
+    }
+
+    [HttpPost]
+    public ActionResult Cadastrar(CadastrarFuncionarioViewModel cadastrarVm)
+    {
+        if (!ModelState.IsValid)
+            return View(cadastrarVm);
+
+        CadastrarFuncionarioDto dto = mapeador.Map<CadastrarFuncionarioDto>(cadastrarVm);
+
+        Result resultado = servicoFuncionario.Cadastrar(dto);
+
+        if (resultado.IsFailed)
+        {
+            ModelState.AddModelError(resultado);
+
+            return View(cadastrarVm);
+        }
+
+        return RedirectToAction(nameof(Listar));
+    }
 }
