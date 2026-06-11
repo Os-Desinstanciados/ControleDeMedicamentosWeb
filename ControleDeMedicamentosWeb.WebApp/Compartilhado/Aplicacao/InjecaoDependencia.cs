@@ -1,5 +1,7 @@
 using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFuncionario.Aplicacao;
 using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloPaciente.Aplicacao;
+using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFornecedor.Aplicacao;
+using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloMedicamento.Aplicacao;
 
 namespace ControleDeMedicamentosWeb.WebApp.Compartilhado.Aplicacao;
 
@@ -9,5 +11,7 @@ public static class InjecaoDependencia
     {
         services.AddScoped<ServicoPaciente>();
         services.AddScoped<ServicoFuncionario>();
+        services.AddScoped<ServicoFornecedor>();
+        services.AddScoped<ServicoMedicamento>();
     }
 }
