@@ -1,12 +1,14 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFornecedor.Dominio;
+using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloMedicamento.Dominio;
 
 namespace ControleDeMedicamentosWeb.WebApp.Compartilhado.Infra.Arquivos;
 
 public sealed class ContextoJson
 {
     public List<Fornecedor> Fornecedores { get; set; } = new List<Fornecedor>();
+    public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
     private readonly string caminhoArquivo;
 
     public ContextoJson()
@@ -52,7 +54,7 @@ public sealed class ContextoJson
         if (contextoSalvo == null)
             return;
 
-        Fornecedores = contextoSalvo.Fornecedores; //'ContextoJson' does not contain a definition for 'Fornecedores' and no accessible extension method 'Fornecedores' accepting a first argument of type 'ContextoJson' could be found (are you missing a using directive or an assembly reference?)
-
+        Fornecedores = contextoSalvo.Fornecedores;
+        Medicamentos = contextoSalvo.Medicamentos;
     }
 }

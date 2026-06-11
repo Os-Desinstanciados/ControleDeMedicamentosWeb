@@ -30,7 +30,7 @@ public sealed class Fornecedor : EntidadeBase<Fornecedor>
         if (string.IsNullOrWhiteSpace(Telefone))
             erros.Add("O campo \"Telefone\" deve ser preenchido.");
 
-        else if (Telefone.Length < 10 || Nome.Length > 11)
+        else if (Telefone.Length < 10 || Telefone.Length > 11)
             erros.Add("O campo \"Telefone\" deve conter 10 ou 11 caracteres.");
         
         if (string.IsNullOrWhiteSpace(Cnpj))
