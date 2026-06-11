@@ -1,6 +1,6 @@
 namespace ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFornecedor.Aplicacao;
 
-public record ListarFornecedorsDto(
+public record ListarFornecedoresDto(
     Guid Id,
     string Nome,
     string Telefone,

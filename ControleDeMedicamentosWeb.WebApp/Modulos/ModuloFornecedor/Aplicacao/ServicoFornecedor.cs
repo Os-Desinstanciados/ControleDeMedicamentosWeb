@@ -63,11 +63,11 @@ public class ServicoFornecedor
         return Result.Ok();
     }
 
-    public List<ListarFornecedorsDto> SelecionarTodos()
+    public List<ListarFornecedoresDto> SelecionarTodos()
     {
         return repositorioFornecedor
             .SelecionarTodos()
-            .Select(f => new ListarFornecedorsDto(f.Id, f.Nome, f.Telefone, f.Cnpj))
+            .Select(f => new ListarFornecedoresDto(f.Id, f.Nome, f.Telefone, f.Cnpj))
             .ToList();
     }
 
