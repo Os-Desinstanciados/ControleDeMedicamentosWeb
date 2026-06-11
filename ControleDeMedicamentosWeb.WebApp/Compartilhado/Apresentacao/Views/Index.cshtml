@@ -14,6 +14,7 @@
             <a class="btn btn-primary rounded-pill px-4" asp-controller="Fornecedor" asp-action="Listar">Fornecedores</a>
             <a class="btn btn-primary rounded-pill px-4" asp-controller="Paciente" asp-action="Listar">Pacientes</a>
             <a class="btn btn-primary rounded-pill px-4" asp-controller="Medicamento" asp-action="Listar">Medicamentos</a>
+            <a class="btn btn-primary rounded-pill px-4" asp-controller="Funcionario" asp-action="Listar">Funcionários</a>
         </div>
 
     </div>
@@ -24,16 +25,24 @@
                 <h3 class="h5 text-primary mb-3">Módulos disponíveis</h3>
 
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" asp-controller="Fornecedor" asp-action="Listar">
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                       asp-controller="Fornecedor" asp-action="Listar">
                         Controle de Fornecedores
                         <span class="badge text-bg-primary rounded-pill">Abrir</span>
                     </a>
-                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" asp-controller="Paciente" asp-action="Listar">
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                       asp-controller="Paciente" asp-action="Listar">
                         Controle de Pacientes
                         <span class="badge text-bg-primary rounded-pill">Abrir</span>
                     </a>
-                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" asp-controller="Medicamento" asp-action="Listar">
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                       asp-controller="Medicamento" asp-action="Listar">
                         Controle de Medicamentos
+                        <span class="badge text-bg-primary rounded-pill">Abrir</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                       asp-controller="Funcionario" asp-action="Listar">
+                        Controle de Funcionários
                         <span class="badge text-bg-primary rounded-pill">Abrir</span>
                     </a>
                 </div>

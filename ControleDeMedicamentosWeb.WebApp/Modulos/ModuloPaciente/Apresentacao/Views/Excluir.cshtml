@@ -1,0 +1,44 @@
+@using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloPaciente.Apresentacao
+
+@{
+    Layout = "_Layout";
+    ViewBag.Titulo = "Exclusão de Paciente";
+}
+
+@model ExcluirPacienteViewModel
+
+<form asp-action="Excluir">
+
+    <input asp-for="Id" type="hidden" />
+
+    <p>Deseja realmente excluir o paciente abaixo?</p>
+
+    <div class="mb-3">
+        <label>Nome</label>
+        <input asp-for="Nome" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Telefone</label>
+        <input asp-for="Telefone" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>Cartão SUS</label>
+        <input asp-for="CartaoSUS" class="form-control" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label>CPF</label>
+        <input asp-for="Cpf" class="form-control" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-danger">
+        Confirmar Exclusão
+    </button>
+
+    <a asp-action="Listar" class="btn btn-secondary">
+        Voltar
+    </a>
+
+</form>
