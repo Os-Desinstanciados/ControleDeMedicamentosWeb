@@ -3,7 +3,7 @@
     ViewBag.Titulo = "Listagem de Medicamentos";
 }
 
-@model List<ListarMedicamentosViewModel>
+@model List<ListarMedicamentosViewModel>;
 
 <a class="btn btn-outline-primary rounded-pill px-4 mb-3" asp-action="Cadastrar">Cadastrar Novo</a>
 
@@ -30,22 +30,21 @@ else
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
                             <h5 class="card-title mb-0">@m.Nome</h5>
-                            <span class="badge text-bg-primary rounded-pill">m.Id.ToString().Substring(0, 8)</span>
+                            <span class="badge text-bg-primary rounded-pill">@m.Id.ToString().Substring(0, 8)</span>
                         </div>
 
+                        <p class="text-secondary mb-3">@m.Descricao</p>
+
                         <dl class="row g-2 mb-4">
-                            <dt class="col-6 text-secondary fw-semibold">Descrição</dt>
-                            <dd class="col-6 mb-0 text-break">@m.Descricao</dd>
+                            <dt class="col-5 text-secondary fw-semibold">Fornecedor</dt>
+                            <dd class="col-7 mb-0 text-break">@m.FornecedorNome</dd>
 
-                            <dt class="col-6 text-secondary fw-semibold">Quantidade em Estoque</dt>
-                            <dd class="col-6 mb-0 text-break">@m.QuantidadeEstoque</dd>
-
-                            <dt class="col-6 text-secondary fw-semibold">Fornecedor</dt>
-                            <dd class="col-6 mb-0 text-break">@m.FornecedorNome</dd>
-
+                            <dt class="col-5 text-secondary fw-semibold">Estoque</dt>
+                            <dd class="col-7 mb-0 text-break">@m.QuantidadeEstoque</dd>
                         </dl>
 
                         <div class="d-flex flex-wrap gap-2 mt-auto justify-content-end">
+                            <a class="btn btn-outline-primary btn-sm rounded-pill px-3" asp-controller="Estoque" asp-action="Historico" asp-route-medicamentoId="@m.Id">Estoque</a>
                             <a class="btn btn-outline-primary btn-sm rounded-pill px-3" asp-action="Editar" asp-route-id="@m.Id">Editar</a>
                             <a class="btn btn-outline-primary btn-sm rounded-pill px-3" asp-action="Excluir" asp-route-id="@m.Id">Excluir</a>
                         </div>

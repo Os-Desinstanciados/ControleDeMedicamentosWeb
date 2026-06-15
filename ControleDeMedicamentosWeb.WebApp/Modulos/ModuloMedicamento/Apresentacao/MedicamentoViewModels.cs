@@ -7,6 +7,7 @@ public record OpcaoFornecedorViewModel(
     Guid Id,
     string Nome
 );
+
 public record ListarMedicamentosViewModel(
     Guid Id,
     string Nome,
@@ -20,10 +21,10 @@ public record CadastrarMedicamentoViewModel(
     [Required(ErrorMessage = "O campo \"Nome\" deve ser preenchido.")]
     [StringLength(100, MinimumLength = 3, ErrorMessage = "O campo \"Nome\" deve conter entre 3 e 100 caracteres.")]
     string Nome,
-    
-    [Required(ErrorMessage = "O campo \"Descrição\" deve ser preenchido.")]
-    [StringLength(255, MinimumLength = 5, ErrorMessage = "O campo \"Descrição\" deve conter entre 5 e 255 caracteres.")]
-    string Descricao,    
+
+    [Required(ErrorMessage = "O campo \"Descricao\" deve ser preenchido.")]
+    [StringLength(255, MinimumLength = 5, ErrorMessage = "O campo \"Descricao\" deve conter entre 5 e 255 caracteres.")]
+    string Descricao,
 
     [Required(ErrorMessage = "O campo \"Fornecedor\" deve ser preenchido.")]
     Guid FornecedorId,
@@ -38,10 +39,10 @@ public record EditarMedicamentoViewModel(
     [Required(ErrorMessage = "O campo \"Nome\" deve ser preenchido.")]
     [StringLength(100, MinimumLength = 3, ErrorMessage = "O campo \"Nome\" deve conter entre 3 e 100 caracteres.")]
     string Nome,
-    
-    [Required(ErrorMessage = "O campo \"Descrição\" deve ser preenchido.")]
-    [StringLength(255, MinimumLength = 5, ErrorMessage = "O campo \"Descrição\" deve conter entre 5 e 255 caracteres.")]
-    string Descricao,    
+
+    [Required(ErrorMessage = "O campo \"Descricao\" deve ser preenchido.")]
+    [StringLength(255, MinimumLength = 5, ErrorMessage = "O campo \"Descricao\" deve conter entre 5 e 255 caracteres.")]
+    string Descricao,
 
     [Required(ErrorMessage = "O campo \"Fornecedor\" deve ser preenchido.")]
     Guid FornecedorId,
@@ -55,6 +56,6 @@ public record ExcluirMedicamentoViewModel(
     string Nome,
     string Descricao,
     uint QuantidadeEstoque,
-    Guid FornecedoId,
+    Guid FornecedorId,
     string FornecedorNome
 );
