@@ -7,7 +7,7 @@ public record ListarMedicamentosViewModel(
     Guid Id,
     string Nome,
     string Descricao,
-    int QuantidadeEstoque,
+    uint QuantidadeEstoque,
     string FornecedorNome
 );
 
@@ -21,8 +21,8 @@ public record CadastrarMedicamentoViewModel(
     string Descricao,
 
     [Required(ErrorMessage = "O campo \"Quantidade no Estoque\" deve ser preenchido.")]
-    [Range(1, int.MaxValue, ErrorMessage = "A quantidade no estoque deve ser maior que ZERO.")]
-    int Quantidade,
+    [Range(1, uint.MaxValue, ErrorMessage = "A quantidade no estoque deve ser maior que ZERO.")]
+    uint QuantidadeEstoque,
 
     [Required(ErrorMessage = "O campo \"Fornecedor\" deve ser preenchido.")]
     string FornecedorNome
@@ -40,8 +40,8 @@ public record EditarMedicamentoViewModel(
     string Descricao,
 
     [Required(ErrorMessage = "O campo \"Quantidade no Estoque\" deve ser preenchido.")]
-    [Range(1, int.MaxValue, ErrorMessage = "A quantidade no estoque deve ser maior que ZERO.")]
-    int Quantidade,
+    [Range(1, uint.MaxValue, ErrorMessage = "A quantidade no estoque deve ser maior que ZERO.")]
+    uint QuantidadeEstoque,
 
     [Required(ErrorMessage = "O campo \"Fornecedor\" deve ser preenchido.")]
     string FornecedorNome

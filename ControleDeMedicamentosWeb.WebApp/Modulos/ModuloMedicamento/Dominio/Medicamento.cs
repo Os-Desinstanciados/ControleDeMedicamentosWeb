@@ -1,4 +1,5 @@
 using ControleDeMedicamentosWeb.WebApp.Compartilhado.Dominio;
+using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloEstoque.Dominio;
 using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFornecedor.Dominio;
 
 namespace ControleDeMedicamentosWeb.WebApp.Modulos.ModuloMedicamento.Dominio;
@@ -7,17 +8,23 @@ public sealed class Medicamento : EntidadeBase<Medicamento>
 {
     public string Nome { get; set; } = string.Empty;
     public string Descricao { get; set; } = string.Empty;
-    public int QuantidadeEstoque { get; set; } = 0;
+    public uint QuantidadeEstoque { get; set; } = 0;
     public Fornecedor Fornecedor { get; set; } = null!;
+    public List<RequisicaoBase> Requisicoes { get; set; } = new List<RequisicaoBase>();
 
     public Medicamento() { }
 
-    public Medicamento(string nome, string descricao, int quantidadeEstoque, Fornecedor fornecedor)
+    public Medicamento(string nome, string descricao, uint quantidadeEstoque, Fornecedor fornecedor)
     {
         Nome = nome;
         Descricao = descricao;
         QuantidadeEstoque = quantidadeEstoque;
         Fornecedor = fornecedor;
+    }
+
+    public void RegistrarRequisicao(RequisicaoBase requisicao)
+    {
+        Requisicoes.Add(requisicao);
     }
 
     public override List<string> Validar()
