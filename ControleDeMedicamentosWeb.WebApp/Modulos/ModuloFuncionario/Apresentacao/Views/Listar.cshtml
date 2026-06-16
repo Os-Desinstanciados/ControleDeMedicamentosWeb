@@ -1,59 +1,54 @@
 @using ControleDeMedicamentosWeb.WebApp.Modulos.ModuloFuncionario.Apresentacao
-
 @{
     Layout = "_Layout";
-    ViewBag.Titulo = "Listagem de Funcionários";
+    ViewBag.Titulo = "Listagem de Funcionarios";
 }
 
-@model List<ListarFuncionarioViewModel>
+@model List<ListarFuncionarioViewModel>;
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="mb-0">Funcionários Cadastrados</h3>
+<a class="btn btn-outline-primary rounded-pill px-4 mb-3" asp-action="Cadastrar">Cadastrar Novo</a>
 
-    <a asp-action="Cadastrar" class="btn btn-primary">
-        Cadastrar Novo
-    </a>
-</div>
-
-<div class="card shadow-sm">
-    <div class="card-body">
-
-        <table class="table table-hover align-middle">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>CPF</th>
-                    <th width="180">Ações</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                @foreach (var funcionario in Model)
-                {
-                    <tr>
-                        <td>@funcionario.Nome</td>
-                        <td>@funcionario.Telefone</td>
-                        <td>@funcionario.Cpf</td>
-
-                        <td>
-                            <a asp-action="Editar"
-                               asp-route-id="@funcionario.Id"
-                               class="btn btn-sm btn-warning">
-                                Editar
-                            </a>
-
-                            <a asp-action="Excluir"
-                               asp-route-id="@funcionario.Id"
-                               class="btn btn-sm btn-danger">
-                                Excluir
-                            </a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-
-        </table>
-
+@if (TempData["MensagemErro"] is string mensagemErro)
+{
+    <div class="alert alert-danger border-start border-danger border-4 rounded-3" role="alert">
+        @mensagemErro
     </div>
-</div>
+}
+
+@if (Model.Count == 0)
+{
+    <div class="alert alert-primary border-start border-primary border-4 rounded-3" role="alert">
+        Nenhum funcionario cadastrado.
+    </div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2">
+        @foreach (ListarFuncionarioViewModel f in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
+                            <h5 class="card-title mb-0">@f.Nome</h5>
+                            <span class="badge text-bg-primary rounded-pill">@f.Id.ToString().Substring(0, 8)</span>
+                        </div>
+
+                        <dl class="row g-2 mb-4">
+                            <dt class="col-5 text-secondary fw-semibold">Telefone</dt>
+                            <dd class="col-7 mb-0 text-break">@f.Telefone</dd>
+
+                            <dt class="col-5 text-secondary fw-semibold">CPF</dt>
+                            <dd class="col-7 mb-0 text-break">@f.Cpf</dd>
+                        </dl>
+
+                        <div class="d-flex flex-wrap gap-2 mt-auto justify-content-end">
+                            <a class="btn btn-outline-primary btn-sm rounded-pill px-3" asp-action="Editar" asp-route-id="@f.Id">Editar</a>
+                            <a class="btn btn-outline-primary btn-sm rounded-pill px-3" asp-action="Excluir" asp-route-id="@f.Id">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
