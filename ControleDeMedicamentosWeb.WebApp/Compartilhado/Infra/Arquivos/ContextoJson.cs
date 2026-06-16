@@ -14,9 +14,7 @@ public sealed class ContextoJson
     public List<Funcionario> Funcionarios { get; set; } = new List<Funcionario>();
     public List<Fornecedor> Fornecedores { get; set; } = new List<Fornecedor>();
     public List<Medicamento> Medicamentos { get; set; } = new List<Medicamento>();
-    public List<RequisicaoEntrada> RequisicoesEntrada { get; set; } = [];
-    public List<RequisicaoSaida> RequisicoesSaida { get; set; } = [];
-    
+    public List<RequisicaoBase> Requisicoes { get; set; } = new List<RequisicaoBase>();
     private readonly string caminhoArquivo;
 
     public ContextoJson()
@@ -66,6 +64,6 @@ public sealed class ContextoJson
         Funcionarios = contextoSalvo.Funcionarios;
         Fornecedores = contextoSalvo.Fornecedores;
         Medicamentos = contextoSalvo.Medicamentos;
-        RequisicoesEntrada = contextoSalvo.RequisicoesEntrada;
+        Requisicoes = contextoSalvo.Requisicoes;
     }
 }

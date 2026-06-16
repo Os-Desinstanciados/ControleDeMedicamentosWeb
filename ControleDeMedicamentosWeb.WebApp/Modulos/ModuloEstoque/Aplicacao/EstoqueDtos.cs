@@ -5,7 +5,7 @@ public record DetalhesEstoqueMedicamentoDto(
     string MedicamentoNome,
     string MedicamentoDescricao,
     string FornecedorNome,
-    uint QuantidadeEmEstoque
+    uint QuantidadeEstoque
 );
 
 public record OpcaoFuncionarioDto(

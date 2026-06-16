@@ -63,7 +63,7 @@ public class ServicoEstoque
         if (dto.Quantidade == 0)
             return Falha(nameof(dto.Quantidade), "A quantidade deve ser maior que zero.");
 
-        if (dto.Quantidade > medicamento.QuantidadeEmEstoque)
+        if (dto.Quantidade > medicamento.QuantidadeEstoque)
             return Falha(nameof(dto.Quantidade), "A quantidade solicitada excede o estoque disponivel.");
 
         MedicamentoPrescrito medicamentoPrescrito = new MedicamentoPrescrito(medicamento, dto.Quantidade);
@@ -86,7 +86,7 @@ public class ServicoEstoque
             medicamento.Nome,
             medicamento.Descricao,
             medicamento.Fornecedor.Nome,
-            medicamento.QuantidadeEmEstoque
+            medicamento.QuantidadeEstoque
         ));
     }
 
