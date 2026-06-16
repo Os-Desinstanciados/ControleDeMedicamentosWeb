@@ -16,7 +16,7 @@ public static class InjecaoDependencia
             options.ViewLocationFormats.Add("/Compartilhado/Apresentacao/Views/{0}.cshtml");
         });
 
-        object value = services.AddAutoMapper(config =>
+        services.AddAutoMapper(config =>
         {
             config.AddMaps(typeof(Program));
         });
