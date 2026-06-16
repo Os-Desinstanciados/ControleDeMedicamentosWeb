@@ -13,5 +13,7 @@ public static class InjecaoDependencia
         services.AddScoped<ServicoFuncionario>();
         services.AddScoped<ServicoFornecedor>();
         services.AddScoped<ServicoMedicamento>();
+        services.AddScoped<ServicoRequisicaoEntrada>();
+        services.AddScoped<ServicoRequisicaoSaida>();
     }
 }
