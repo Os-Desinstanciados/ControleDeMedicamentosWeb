@@ -26,8 +26,8 @@ public static class InjecaoDependencia
             return contextoJson;
         });
 
-        services.AddScoped<IRepositorioPaciente, RepositorioPacienteEmArquivo>();
-        services.AddScoped<IRepositorioFuncionario, RepositorioFuncionarioEmArquivo>();
+        services.AddScoped<IRepositorioPaciente, RepositorioPacienteEmSql>();
+        services.AddScoped<IRepositorioFuncionario, RepositorioFuncionarioEmSql>();
         services.AddScoped<IRepositorioFornecedor, RepositorioFornecedorEmSql>();
         services.AddScoped<IRepositorioMedicamento, RepositorioMedicamentoEmSql>();
         services.AddScoped<IRepositorioRequisicao, RepositorioRequisicaoEmArquivo>();

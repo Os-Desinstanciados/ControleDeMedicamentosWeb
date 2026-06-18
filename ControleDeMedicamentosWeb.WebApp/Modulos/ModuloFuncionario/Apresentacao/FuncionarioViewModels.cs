@@ -19,7 +19,7 @@ public record CadastrarFuncionarioViewModel(
     string Telefone,
 
     [Required(ErrorMessage = "O campo \"CPF\" deve ser preenchido.")]
-    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 15 dígitos.")]
+    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 11 dígitos.")]
     string Cpf
 );
 
@@ -35,7 +35,7 @@ public record EditarFuncionarioViewModel(
     string Telefone,
 
     [Required(ErrorMessage = "O campo \"CPF\" deve ser preenchido.")]
-    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 15 dígitos.")]
+    [StringLength(11, MinimumLength = 11, ErrorMessage = "O campo \"CPF\" deve conter 11 dígitos.")]
     string Cpf
 );
 
