@@ -30,7 +30,7 @@ public static class InjecaoDependencia
         services.AddScoped<IRepositorioFuncionario, RepositorioFuncionarioEmSql>();
         services.AddScoped<IRepositorioFornecedor, RepositorioFornecedorEmSql>();
         services.AddScoped<IRepositorioMedicamento, RepositorioMedicamentoEmSql>();
-        services.AddScoped<IRepositorioRequisicao, RepositorioRequisicaoEmArquivo>();
+        services.AddScoped<IRepositorioRequisicao, RepositorioRequisicaoEmSql>();
         services.AddScoped<ISqlConnectionFactory, SqlConnectionFactory>();
     }
 }
