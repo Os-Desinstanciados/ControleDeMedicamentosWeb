@@ -4,6 +4,11 @@ using ControleDeMedicamentosWeb.WebApp.Compartilhado.Infra;
 
 var builder = WebApplication.CreateBuilder(args);
 
+if (builder.Environment.IsProduction())
+{
+    builder.Configuration.AddUserSecrets<Program>();
+}
+
 builder.Services.AddInfraRepositories();
 
 builder.Services.AddApplicationServices();
